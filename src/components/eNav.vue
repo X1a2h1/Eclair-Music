@@ -9,7 +9,7 @@
                   width="75"
                   src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-90b49633-e3ed-4910-b066-7bcc14cbf4b0/031ac7ad-c779-40a8-9b14-d6e963fcbf85.svg"
 
-              />
+               alt=""/>
             </router-link>
 
           </div>
@@ -75,6 +75,7 @@ import {ElLoading, ElMessage} from "element-plus";
 import {inisHelper} from "../utils/helper/helper.js";
 import {useAuthStore} from "../store/Auth.js";
 import {onMounted} from "vue";
+import {Post} from "../utils/http/fetch.js";
 
 export default {
   name: "eNav",
@@ -82,7 +83,7 @@ export default {
     const store = useAuthStore()
 
     let login_storage = inisHelper.get.storage("auth")
-    if (login_storage != "expire" && login_storage != false){
+    if (login_storage !== "expire" && login_storage !== false){
       store.user = login_storage.user
       store.is_login = true
     }
@@ -109,7 +110,7 @@ export default {
             account: store.account,
             password: store.password
           }).then((res) => {
-            if (res.code == 200){
+            if (res.code === 200){
               // store.user = res.data.user
               // store.is_login = true
               // store.loginForm = false
@@ -172,7 +173,7 @@ export default {
 
 .top-nav-wrapper .top-nav {
   margin: 0 auto;
-  width: 75rem auto;
+  width: 75rem;
   max-width: 75rem;
   padding: 2.5px 1rem 0;
   height: 2.5rem;
