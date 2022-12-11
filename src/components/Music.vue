@@ -2,11 +2,11 @@
   <div>
     <div class="player-info">
       <div>
-        <img :src="store.music.cover || 'https://raw.githubusercontent.com/X1a2h1/X1a2h1/fea4a15cfc4480be2377af11a42fd9d6cba344d4/assets/music.svg'" width="50" alt="">
+        <img :src="store.music.cover || 'https://raw.githubusercontent.com/X1a2h1/X1a2h1/fea4a15cfc4480be2377af11a42fd9d6cba344d4/assets/music.svg'" width="50" style="border-radius: 10px" alt="">
       </div>
       <div class="author-info">
-        <span>{{ store.music.name || "鸡杂"}}</span>
-        <p style="font-size:12px;color:#999">{{  store.music.author || '陈宇晖'}}</p>
+        <span style="font-size: 13px">{{ store.music.name || "鸡杂"}}</span>
+        <span style="font-size:12px;color:#999">{{  store.music.author || '陈宇晖'}}</span>
       </div>
 
     </div>
@@ -40,8 +40,8 @@
         <img :src="item.cover" style="width: 45px; border-radius: 10px" alt="">
       </div>
       <div>
-        <div>{{item.name}}</div>
-        <div>{{ item.author }}</div>
+        <div style="font-size: 12px">{{item.name}}</div>
+        <div style="font-size: 10px">{{ item.author }}</div>
       </div>
     </div>
     </div>
@@ -154,7 +154,12 @@ export default {
 
 }
 .player-info .author-info {
-  height: 20px;
+  display:flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 100%;
+  height: 50px;
 }
 .progress {
   display: flex;

@@ -82,7 +82,7 @@ export default {
         if (page <= store.bangumiList.pn) {
 
         }
-        GET('http://159.75.111.251:2666/list',{
+        GET('https://biliapi.crunl.cn/list',{
           params
         }).then(res => {
           if (res.status === 200){
